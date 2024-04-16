@@ -11,7 +11,7 @@ class Brand(models.Model):
 class Car(models.Model):
     id= models.AutoField(primary_key=True)
     model= models.CharField(max_length=200)
-    brand= models.ForeignKey(Brand, on_delete=models.PROTECT, related_name='car_brand')#Ligação do campo para outra tabela Brand
+    brand= models.ForeignKey(Brand, on_delete=models.PROTECT, related_name='car_brand')#Ligação do campo para outra tabela Brand.!
     factory_year= models.IntegerField(blank=True, null=True)
     model_year= models.FloatField(blank=True, null=True)
     value= models.FloatField(blank=True, null=True)
