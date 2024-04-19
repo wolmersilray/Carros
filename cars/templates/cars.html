@@ -2,9 +2,11 @@
     <head>
         <title>Meu Carros</title>
     </head>
-    {% block content %}
+    {% block content %} <!-- Aberto liguagem do Django para leitura de templates -->
         <body>
-            <h3> {{ cars.model }}</h3>
+            {% for car in cars %}  <!-- Aberto para percorrer a lista de carros -->
+                <h3>{{car.brand}} - {{ car.model }} - {{car.factory_year}}</h3>
+            {% endfor %} <!-- Fechado -->
         </body>
-    {% endblock %}
+    {% endblock %} <!-- Fechamento liguagem do Django para leitura de templates -->
 </html>
