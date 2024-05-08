@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}<!--- Sempre que abrir um formulário no Django adicionar este comando para proteção contra invasão de hakers -->
+        
+        <table>
+            {{ new_car_form.as_table }}
+        </table>
+
+        <input type="submit" value="Cadastrar" class="btn btn-primary">
+    </form>
+{% endblock %}
