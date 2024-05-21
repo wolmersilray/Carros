@@ -3,13 +3,13 @@ from cars.models import Brand, Car
 
 
 class CarForm(forms.Form):
-    model= forms.CharField(max_length=200, required=False)
-    brand= forms.ModelChoiceField(Brand.objects.all(), required=False)
-    factory_year= forms.IntegerField(required=False)
-    model_year= forms.IntegerField(required=False)
-    plate= forms.CharField(max_length=10, required=False)
-    value= forms.FloatField(required=False)
-    photo= forms.ImageField(required=False)
+    model= forms.CharField(max_length=200)
+    brand= forms.ModelChoiceField(Brand.objects.all())
+    factory_year= forms.IntegerField()
+    model_year= forms.IntegerField()
+    plate= forms.CharField(max_length=10)
+    value= forms.FloatField()
+    photo= forms.ImageField()
 
     def save(self):
         car = Car(
