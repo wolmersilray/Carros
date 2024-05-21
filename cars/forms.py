@@ -1,7 +1,7 @@
 from django import forms
 from cars.models import Brand, Car
 
-
+#FORMS SIMPLES
 class CarForm(forms.Form):
     model= forms.CharField(max_length=200)
     brand= forms.ModelChoiceField(Brand.objects.all())
@@ -23,5 +23,11 @@ class CarForm(forms.Form):
         )
         car.save()
         return car
+
+#Model FORMS AVANÇADO (que substitui todo o forms simples)
+class CarModelForm(forms.ModelForm):
+    class Meta: #reescrever a class
+        model= Car #Tabela do BD
+        fields= '__all__'  #Os campos da tabela Cars(nesta caso TODOS)
 
 
