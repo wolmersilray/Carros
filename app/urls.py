@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from cars.views import CarListView, NewCarCreateView
+from cars.views import CarListView, NewCarCreateView, CardetailView, CarUpdateView, CarDeleteView
 from accounts.views import register_view, login_view, logout_view
 
 urlpatterns = [
@@ -28,4 +28,7 @@ urlpatterns = [
     path('logout/', logout_view, name='logout'),
     path('cars/', CarListView.as_view(), name='cars_list'),
     path('new_car/', NewCarCreateView.as_view(), name='new_car'),
+    path('car/<int:pk>/', CardetailView.as_view(), name='car_detail'), #Criado um link 'CAR' passando parâmetros um número 'INT'(inteiro) com id da chave 'PK'(primery key) 
+    path('car/<int:pk>/update/', CarUpdateView.as_view(), name='car_update'), #Criado tela de adição do carros
+    path('car/<int:pk>/delete/', CarDeleteView.as_view(), name='car_delete'), #Criado tela para deletar carros
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
