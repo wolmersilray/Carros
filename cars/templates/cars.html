@@ -108,7 +108,11 @@
       {% for car in cars %}
       <a href="{% url 'car_detail' car.pk %}"> <!--- por este comando ao clicar no card de carro será aberto uma nova janela de car/detail com os detralhes do carro -->
         <div class="car-card">
+          {% if car.photo %}
           <img src="{{ car.photo.url }}" alt="{{ car.model }} - {{ car.brand }}">
+          {% else %}
+          <p class=no-photo> "Foto não disponível"</p>
+          {% endif %}
           <h2>{{ car.brand }} {{ car.model }}</h2>
           <p>{{ car.factory_year }} - R$ {{ car.value }}</p>
         </div>
