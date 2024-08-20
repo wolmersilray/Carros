@@ -17,8 +17,7 @@ def get_car_ai_bio(brand, model, year):
        generation_config= generation_config
         )
 
-    prompt= ''''Me mostre uma descrição de venda para o carro {} {} {} em apenas 250 caracteres. Fale coisas específicas desse modelo de carro.
-                Descreva especificações técnicas desse modelo de carro.
+    prompt= ''''Faça uma descrição de venda para o carro {} {} {}  e com especificações técnicas comapenas 250 caracteres.
             '''
     prompt= prompt.format(brand, model, year)
 
